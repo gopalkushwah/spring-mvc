@@ -1,32 +1,35 @@
 package springmvc.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
 
 	@RequestMapping("/")         //localhost:8080/srpingmvc/
-	public String main(Model model) {
+	public ModelAndView main() {
 //		SYNTAX :
-//		model.addAttribute(String key , Object value)
+//		ModelAndView modelAndView = new ModelAndView();
+//		modelAndView.addObject(String key , Object value)
 		
 		
-		model.addAttribute("name","Gopal");
-		return "index";			//(folder)views/(file)index.jsp
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("name","Gopal");
+		modelAndView.setViewName("index");   //(folder)views/(file)index.jsp
+		return modelAndView;			
 	}
 	@RequestMapping("/about")	//localhost:8080/srpingmvc/about
 	public String about() {
 		return "about";			//(folder)views/(file)about.jsp
 	}
 	@RequestMapping("/contactus") //localhost:8080/srpingmvc/contactus
-	public String contactus(Model model) {
+	public ModelAndView contactus() {
+		ModelAndView modelAndView = new ModelAndView();
 		List<String> contactList = new ArrayList<>();
 		contactList.add("123567890");
 		contactList.add("123567891");
@@ -35,19 +38,29 @@ public class HomeController {
 		contactList.add("123567894");
 		contactList.add("123567895");
 		contactList.add("123567896");
-		model.addAttribute("contactList",contactList);
-		return "contactus";		//(folder)views/(file)contactus.jsp
+		modelAndView.addObject("contactList",contactList);
+		modelAndView.setViewName("contactus");   //(folder)views/(file)contactus.jsp
+		return modelAndView;		
 	}
 	@RequestMapping("/services") //localhost:8080/srpingmvc/services
-	public String services(Model model) {
+	public ModelAndView services(Model model) {
+		ModelAndView modelAndView = new ModelAndView();
+		
 		List<String> serviceList = new ArrayList<>();
 		serviceList.add("Web Dev");
 		serviceList.add("Full Stack Dev");
 		serviceList.add("Marketing");
 		serviceList.add("Designing");
+		serviceList.add("Designing");
+		serviceList.add("Designing");
+		serviceList.add("Designing");
+		serviceList.add("Designing");
+		serviceList.add("Designing");
 		
-		model.addAttribute("serviceList",serviceList);
-		return "services";       //(folder)views/(file)services.jsp
+		modelAndView.addObject("serviceList",serviceList);
+		modelAndView.setViewName("services");  //(folder)views/(file)services.jsp
+		
+		return modelAndView;       
 	}
 	@RequestMapping("/admin/index")   //localhost:8080/srpingmvc/admin/index
 	public String admin() {
