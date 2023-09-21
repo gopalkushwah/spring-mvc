@@ -1,8 +1,5 @@
 package springmvc.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,14 +23,6 @@ public class HomeController {
 	public String services() {
 		return "services";       
 	}
-	@RequestMapping("/admin")   //localhost:8080/srpingmvc/home/admin/index
-	public String admin() {
-		return "admin/adminindex";   //(folder)admin/(file)adminindex.jsp
-	}
 	
-	@RequestMapping("/admin/about") //localhost:8080/srpingmvc/home/admin/about
-	public String adminAbout() {
-		return "admin/about";   //(folder)admin/(file)adminindex.jsp
-	}
 	
 }
