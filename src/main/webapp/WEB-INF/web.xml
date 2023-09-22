@@ -15,5 +15,4 @@
   	<!-- <url-pattern>/spring/</url-pattern> -->  <!-- for only url path which are starting with /spring/ -->
   	<url-pattern>/</url-pattern>  <!-- for all the url paths -->
   </servlet-mapping>
-  
 </web-app>

@@ -4,25 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value="/home") //localhost:8080/srpingmvc/home/
 public class HomeController {
-
-	@RequestMapping(path="/")         //localhost:8080/srpingmvc/home/
-	public String main() {
-		return "index";			
+	
+	@RequestMapping("/")
+	public String home() {
+		return "index";
 	}
-	@RequestMapping("/about")	//localhost:8080/srpingmvc/home/about
+	@RequestMapping("/about")
 	public String about() {
-		return "about";			//(folder)views/(file)about.jsp
+		return "about";
 	}
-	@RequestMapping("/contactus") //localhost:8080/srpingmvc/home/contactus
-	public String contactus() {
-		return "contactus";		
+	@RequestMapping("/contact")
+	public String contact() {
+		return "contact";
 	}
-	@RequestMapping("/services") //localhost:8080/srpingmvc/home/services
-	public String services() {
-		return "services";       
+	@RequestMapping("/services")
+	public String service() {
+		return "services";
 	}
-	
-	
 }
