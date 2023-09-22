@@ -36,7 +36,7 @@ public class AdminController {
 	
 //	using HttpServletRequest request
 	/*
-	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/contact
+	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/sendmessage
 	public String sendmessage(HttpServletRequest request) {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
@@ -50,10 +50,11 @@ public class AdminController {
 	*/
 	
 	
-//	@RequestParam
+//	@RequestParam  :=
 	/*
-	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/contact
+	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/sendmessage
 	public String sendmessage(
+//			@RequestParam("name",required = false/true, defaultValue="as per requirement") String name,
 			@RequestParam("name") String name,
 			@RequestParam("email") String email,
 			@RequestParam("password") String password,
@@ -72,16 +73,16 @@ public class AdminController {
  * 		user.setEmai(email);
  * 		user.setPassword(password);
  * 		model.addAttribute("user",user);
-		return "admin/getcontactdata";   //(folder)admin/(file)adminindex.jsp
-	}
-	*/
+ * 		return "admin/getcontactdata";   //(folder)admin/(file)adminindex.jsp
+ *	}
+*/
 	
 	
 //	@ModelAttribute
 //	This annotation will automatic set the matching field of User with the name field of Html input
 //	Model(Entity class) user properties name should be same as html input element
 //	this annotation will also set the value of === Model model === interface 
-	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/contact
+	@RequestMapping("/sendmessage") //localhost:8080/srpingmvc/admin/sendmessage
 	public String sendmessage(@ModelAttribute User user) {
 		return "admin/getcontactdata";   //(folder)admin/(file)adminindex.jsp
 	}
