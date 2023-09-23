@@ -1,11 +1,11 @@
-package com.springmvcpractice.controller;
+package springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class DispatcherController {
-
+public class HomeController {
+	
 	@RequestMapping("/")
 	public String home() {
 		return "index";
@@ -14,20 +14,12 @@ public class DispatcherController {
 	public String about() {
 		return "about";
 	}
-	@RequestMapping("/services")
-	public String services() {
-		return "services";
-	}
 	@RequestMapping("/contact")
 	public String contact() {
 		return "contact";
 	}
-	@RequestMapping("/save-student")
-	public String saveStudent() {
-		return "save-student";
-	}
-	@RequestMapping("/show-student")
-	public String showStudent() {
-		return "show-student";
+	@RequestMapping("/services")
+	public String service() {
+		return "services";
 	}
 }
