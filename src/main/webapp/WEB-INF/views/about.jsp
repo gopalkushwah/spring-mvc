@@ -9,7 +9,6 @@
 </head>
 <body>
 <h1>About</h1>
-<h1>${ msg }</h1>
-<h1>About</h1>
+<h1>${ user }</h1>
 </body>
 </html>
