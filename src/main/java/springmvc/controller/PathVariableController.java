@@ -19,8 +19,13 @@ public class PathVariableController {
 	
 	@RequestMapping(path="/books/{id}",method = RequestMethod.GET)
 	public String books1(@PathVariable("id") int id,Model model) {
+		
+//		------------------------------------------
+//		generating null pointer exception
 		String str = null;
 		System.out.println(str.charAt(0));
+//		------------------------------------------
+		
 		model.addAttribute(id);
 		System.out.println(id);
 		return "books";
@@ -34,27 +39,6 @@ public class PathVariableController {
 		return "books";
 	}
 	
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value = NullPointerException.class)
-	public String handlerMethod(Model model) {
-		model.addAttribute("msg","Null Pointer Exception");
-		
-		return "error404";
-	}
 	
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value = NumberFormatException.class)
-	public String handlerMethod1(Model model) {
-		model.addAttribute("msg","Cannot cast String to Integer");
-		
-		return "error404";
-	}
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value = Exception.class)
-	public String allHandlerMethod(Model model) {
-		model.addAttribute("msg","All Exception");
-		
-		return "error404";
-	}
 	
 }
