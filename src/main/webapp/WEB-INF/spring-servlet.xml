@@ -20,7 +20,7 @@
 	<context:component-scan base-package="springmvc"/>
 	
 	<mvc:annotation-driven/>
-	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
+	
 	<bean 
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver"
@@ -28,8 +28,10 @@
 		p:suffix=".jsp"
 	/>
 	
-	<bean name="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
-	/>
-	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/welcome"/>
+			<bean class="springmvc.controller.MyInterceptorController"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

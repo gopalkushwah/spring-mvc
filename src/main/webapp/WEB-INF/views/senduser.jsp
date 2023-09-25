@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page isELIgnored="false"%>
+    pageEncoding="UTF-8"%>
+    <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,27 +14,18 @@
 
 </head>
 <body>
-	<div class="row">
-		<div class="col-sm-12 col-md-4 col-lg-5 offset-md-4 offset-lg-4">
-			<div class="card mt-5 p-5 container text-center">
-				<h1>Something Went Wrong!</h1>
-				<h2>${msg}</h2>
-				<p>
-					<b>Please Try again later</b>
-				</p>
-				<div class="row">
-					<div class="col">
-						<a href="/springmvc/">Home</a>
-					</div>
-					<div class="col">
-						<a href="/springmvc/contact">Contact</a>
-					</div>
+	<div class="container text-center">
+		<form action="welcome" method="get" class="mt-5">
+			<div class="row">
+				<div class="col-8">
+					<input type="text" class="form-control" placeholder="Enter User Name" name="user">
+				</div>
+				<div class="col-4">
+					<button class="btn btn-danger" type="submit">Send Hello!</button>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
-
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

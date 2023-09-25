@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>File Uploaded</title>
+<title>About</title>
 </head>
 <body>
-<h1>File Uploaded</h1>
+<h1>About</h1>
 </body>
 </html>
