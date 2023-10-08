@@ -29,7 +29,9 @@ public class FileController {
 		System.out.println(file.getOriginalFilename());
 		System.out.println(file.getSize());
 		System.out.println(file.getStorageDescription());
-		
+
+		// to find the uploaded image in eclipse work space
+		//  eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\
 		String realPath = httpSession.getServletContext().getRealPath("/")+"WEB-INF"+File.separator+"resources"+File.separator+"uploads"+File.separator+file.getOriginalFilename();
 		byte[] bytes = file.getBytes();
 		System.out.println(realPath);
